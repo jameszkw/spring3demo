@@ -13,5 +13,6 @@
 						http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 						http://www.springframework.org/schema/task 
 						http://www.springframework.org/schema/task/spring-task-3.0.xsd">
-	<bean id="car1" class="com.zkw.model" p:brand="奔馳" p:color="red" p:maxSpeed="290"/>
+	
+	
 </beans>
