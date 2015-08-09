@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 						http://www.springframework.org/schema/context
@@ -12,6 +13,13 @@
 						http://www.springframework.org/schema/aop   
 						http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 						http://www.springframework.org/schema/task 
-						http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+						http://www.springframework.org/schema/task/spring-task-3.0.xsd
+						http://www.springframework.org/schema/util 
+						http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 	<bean id="car" class="com.zkw.ioc.beanfactory.demo.Car" p:brand="奔馳" p:color="red" p:maxSpeed="290"/>
+	<bean id="iocproperties" class="com.zkw.ioc.iocproperties.IocPropertiesDemo">
+    <constructor-arg>
+        <util:properties location="classpath:vmstyle.properties"/> 
+    </constructor-arg>
+	</bean>
 </beans>
