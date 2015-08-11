@@ -13,12 +13,13 @@ import java.util.Map;
  *
  */
 public class IocPropertiesDemo {
-	private Map<String,String> properties;
-	public IocPropertiesDemo(Map<String,String> map) {
+	private Map<String, String> properties;
+
+	public IocPropertiesDemo(Map<String, String> map) {
 		this.properties = map;
 	}
-	
-	public String getPropertiesValue(String key){
+
+	public String getPropertiesValue(String key) {
 		return properties.get(key);
 	}
 }
