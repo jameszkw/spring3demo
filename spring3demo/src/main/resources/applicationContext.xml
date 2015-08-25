@@ -14,5 +14,9 @@
 						http://www.springframework.org/schema/task 
 						http://www.springframework.org/schema/task/spring-task-3.0.xsd">
 	
+	<bean id="runMeJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<property name="targetObject" ref="runMeTask" />
+	<property name="targetMethod" value="printMe" />
 	
+</bean>
 </beans>

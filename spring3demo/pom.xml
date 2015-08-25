@@ -73,6 +73,14 @@
 			<version>1.2.17</version>
 		</dependency>
 		<!-- log4j end -->
+		<!-- quartz begin -->
+		<dependency>
+		<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>1.8.6</version>
+		</dependency>
+		<!-- quartz end -->
+		
   </dependencies>
   <build>
     <finalName>spring3demo</finalName>
