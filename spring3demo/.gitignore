@@ -2,3 +2,5 @@
 .settings
 .classpath
 .project
+.idea
+spring3demo.iml
