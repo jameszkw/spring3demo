@@ -19,11 +19,17 @@
         <property name="targetObject" ref="runMeTask"/>
         <property name="targetMethod" value="printMe"/>
     </bean>-->
+    <!-- 引入dbconfig.properties属性文件 -->
+    <context:property-placeholder location="classpath:dbconfig.properties" />
     <!--扫描指定包（将带有Component注解的类自动定义为Spring Bean）-->
-    <context:component-scan base-package="com.zkw.spring3.aop.declare"/>
+    <context:component-scan base-package="com.zkw.spring3"/>
+    <import resource="classpath:spring-mybatis.xml"/>
 
+    <!-- 对@AspectJ切面的bean创建代理 -->
+    <aop:aspectj-autoproxy />
+
+    <!--aop通知begin-->
     <bean id="greetingImpl" class="com.zkw.spring3.aop.declare.GreetingImpl"/>
-
     <!--配置一个代理-->
     <bean id="greetingProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         <!--需要代理的接口-->
@@ -34,11 +40,12 @@
         <property name="interceptorNames">
             <list>
                 <!--<value>greetingAroundAdvice</value>-->
+                <!--异常返回通知 不对-->
                 <value>greetingThrowAdvice</value>
             </list>
         </property>
     </bean>
-
+    <!--配置一个引入代理-->
     <bean id="greetingIntroProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         <!--需要动态实现的接口-->
         <property name="interfaces" value="com.zkw.spring3.aop.declare.Apology"/>
@@ -49,4 +56,10 @@
         <!--代理目标类（默认为false，代理接口）-->
         <property name="proxyTargetClass" value="true"/>
     </bean>
+    <!--aop通知end-->
+
+
+
+
+
 </beans>

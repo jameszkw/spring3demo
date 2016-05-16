@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkw.spring3.dao.TMytestMapper">
+    <select id="selectCount" resultType="com.zkw.spring3.entity.TMytest">
+        select * from t_mytest t
+        <where>
+            <if test="userId != null and userId != ''">
+                and t.user_id = #{userId}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert" parameterType="com.zkw.spring3.entity.TMytest" useGeneratedKeys="true" keyProperty="user_id">
+        insert into t_mytest (user_id,user_name,user_birthday,user_salary)
+        values ((select IFNULL(b.num,0)+1 from (select max(t.user_id)as num from t_mytest t) b),#{userName},#{userBirthday},#{userSalary})
+    </insert>
+</mapper>
