@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.nio.channels.AsynchronousSocketChannel;
 
 /**
  * Created by Administrator on 2016/5/16 0016.
@@ -21,5 +22,6 @@ public class UserController {
     @ResponseBody
     public void addUser(){
         userService.addUser();
+        AsynchronousSocketChannel asynchronousSocketChannel;
     }
 }

@@ -1,5 +1,7 @@
 package com.zkw.sourcecode;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * ${DESCRIPTION}
  *
@@ -8,4 +10,7 @@ package com.zkw.sourcecode;
  **/
 
 public class StrapBootSpring {
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("classpath:sourcecode/sourcecode.xml");
+    }
 }

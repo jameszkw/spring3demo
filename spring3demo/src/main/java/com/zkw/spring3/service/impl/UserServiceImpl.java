@@ -3,6 +3,7 @@ package com.zkw.spring3.service.impl;
 import com.zkw.spring3.dao.TMytestMapper;
 import com.zkw.spring3.entity.TMytest;
 import com.zkw.spring3.service.UserServiceI;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

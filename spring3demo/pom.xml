@@ -11,7 +11,7 @@
 
     <properties>
         <java.version>1.7</java.version>
-        <org.springframework.version>3.2.2.RELEASE</org.springframework.version>
+        <org.springframework.version>3.2.4.RELEASE</org.springframework.version>
     </properties>
 
     <build>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
         <!-- start spring 核心依赖包 -->
@@ -76,6 +76,13 @@
             <version>${org.springframework.version}</version>
         </dependency>
         <!--end Spring的事务管理器-->
+        <!--start spring test-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <!--end spring test-->
         <!-- log4j与slf4j整合 begin -->
         <dependency>
             <groupId>org.slf4j</groupId>
